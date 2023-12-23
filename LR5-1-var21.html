@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<body style="background-color:LightSteelBlue;">
+		<script>
+		/* Дана матрица размера M x N. В каждой её строке найти кол-во элементов
+		меньшее среднего арифметического всех элементов этой строки.  [2, 8, 11, 3],[7, 10, 5, 3],[21, 18, 1, 32],[5, 14, 7, 9]*/
+		"use strict"
+		let Matrix = [[21, 1, 4, 7],[2, 18, 3, 48],[9, 0, 1, 32],[5, 6, 7, 9]], List = [], 
+		M = 4, N = 4, average = 0, count = 0, average_math;
+		
+		for (let i = 0; i < M; i++) {
+			average = 0;
+			for (let j = 0; j < N; j++) {
+				average += Matrix[i][j];
+				if (j == N-1) {
+					average_math = average / N;
+					List.push(average_math);
+				}
+			}
+		}
+		for (let i = 0; i < M; i++) {
+			count = 0;
+			for (let j = 0; j < N; j++) {
+				if (Matrix[i][j] < List[i]) {
+					count += 1;
+				} if (j == N-1) {
+					console.log("В " + (i+1) + "-й строке "+ Matrix[i]+ " - " + count + " элементов < ", List[i]);
+				}
+			}
+		}
+		</script> 
+	</body>
+</html>

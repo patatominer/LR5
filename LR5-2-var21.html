@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<body style="background-color:LightSteelBlue;">
+		<script>
+ 
+/* Дана квадратная матрица порядка M. Обнулить все элементы матрицы, 
+лежащие на главной диагонали и выше неё. Условный оператор не юзать. */
+		
+"use strict"
+let Matrix = [[0, 8, 1111, 0],[7, 0, -51, 4],[21, 8, 1, 8],[1, 1, 4, 9]];
+alert(`Исходная Матрица: 
+${Matrix[0]}
+${Matrix[1]}
+${Matrix[2]}
+${Matrix[3]}`);
+for (let i = 0; i < Matrix.length; i++) {
+	for (let j = 0; j <= i; j++) {
+		Matrix[j][i] = 0;
+	}
+} 
+console.log(Matrix);
+		</script> 
+	</body>
+</html>
